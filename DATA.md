@@ -6,4 +6,4 @@ This isn't great from an engineering standpoint, so I may try some additional pr
 
 
 1. Transform non-numerical data to numberical (Checkout research article for options)
-2. 
+2. Normalize Data to [0,1].

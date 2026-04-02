@@ -44,31 +44,3 @@ if __name__ == "__main__":
     
     dir_has_matching_data(path)
     
-    
-
-
-def csv_to_parquet(csv_path: Path):
-    parquet_path = csv_path.with_suffix(".parquet")
-    try:
-        df = pd.read_csv(csv_path, low_memory=False, encoding="latin-1")
-
-        # Normalize column names: strip surrounding whitespace
-        df.columns = df.columns.str.strip()
-
-        # Drop spurious pandas index columns (e.g. "Unnamed: 0")
-        df = df.loc[:, ~df.columns.str.match(r"^Unnamed")]
-
-        # Fix mixed-type object columns (e.g. SimillarHTTP has both int 0 and str '0').
-        # If every non-null value converts to a number without introducing new NaNs,
-        # store as float. Otherwise keep as string (handles IPs, labels, etc.).
-        for col in df.select_dtypes(include="object").columns:
-            converted = pd.to_numeric(df[col], errors="coerce")
-            newly_null = converted.isna() & df[col].notna()
-            if not newly_null.any():
-                df[col] = converted
-            else:
-                df[col] = df[col].astype(str)
-
-        df.to_parquet(parquet_path, index=False)
-    except Exception as e:
-        print(f"Error converting '{csv_path}': {e}", file=sys.stderr)

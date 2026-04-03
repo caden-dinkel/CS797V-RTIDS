@@ -18,7 +18,7 @@ This isn't great from an engineering standpoint, so I may try some additional pr
 
     Could hash url strings into a fixed integer range, which will help keep them somewhat distinct from one another.
 
-    IP Addrs can be decomposed into octets (I think that's what it's called)
+    IP Addrs can be decomposed into octets
 
 2. Normalize Data to [0,1] using the method:
 
@@ -28,3 +28,4 @@ This isn't great from an engineering standpoint, so I may try some additional pr
 
 
 3. Split into Training (70%), Testing (15%), Validation (15%)
+

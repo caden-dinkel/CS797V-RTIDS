@@ -10,13 +10,9 @@ This isn't great from an engineering standpoint, so I may try some additional pr
 
     "Unlike other machine learning models, our method aim to retain as many features as possible for the purpose of accuracy improvement, the self-attention mechanism in our model can select features automatically. We transform all the symbolic features contained in the datasets into numerical values."
 
-    Based on this statement, I assume a naive conversion directly to numbers using `pd.to_numeric(df['col'], errors='coerce').fillna(0)`
-
-    This will result in a flat column of zeros after conversion. This is basically just wasting data.
+    Check out conversions at: 
 
     b. Attempt some other method of conversion:
-
-    Could hash url strings into a fixed integer range, which will help keep them somewhat distinct from one another.
 
     IP Addrs can be decomposed into octets
 

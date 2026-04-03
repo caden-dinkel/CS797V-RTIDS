@@ -10,11 +10,7 @@ This isn't great from an engineering standpoint, so I may try some additional pr
 
     "Unlike other machine learning models, our method aim to retain as many features as possible for the purpose of accuracy improvement, the self-attention mechanism in our model can select features automatically. We transform all the symbolic features contained in the datasets into numerical values."
 
-    Check out conversions at: 
-
-    b. Attempt some other method of conversion:
-
-    IP Addrs can be decomposed into octets
+    Check out conversions at: https://www.kaggle.com/code/filipekoriginal/cicids2017-preprocessing
 
 2. Normalize Data to [0,1] using the method:
 

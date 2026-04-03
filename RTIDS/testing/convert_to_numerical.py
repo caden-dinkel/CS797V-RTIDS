@@ -17,5 +17,10 @@ string_mask = numeric.isna()
 string_values = col[string_mask]
 string_indices = col.index[string_mask]
 
+
+
 for i, val in string_values.items():
     print(f"{i}.  {val}")
+
+for i,val in col.items():
+    print(f"{i}. {val}")

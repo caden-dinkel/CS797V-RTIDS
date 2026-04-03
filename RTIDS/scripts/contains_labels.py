@@ -3,8 +3,7 @@ import sys
 from pathlib import Path
 
 LABEL_COLUMN = " Label"
-RAW_DIR = ROOT / "raw"
-DATA_DIR = ROOT / "data"
+
 
 def get_labels(file_path: Path) -> set:
     if file_path.suffix == ".parquet":

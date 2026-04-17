@@ -21,13 +21,8 @@
       keras
       scikit-learn
       matplotlib
-    ''
+    '';
   };
-  # https://devenv.sh/processes/
-  # processes.dev.exec = "${lib.getExe pkgs.watchexec} -n -- ls -la";
-
-  # https://devenv.sh/services/
-  # services.postgres.enable = true;
 
   # https://devenv.sh/scripts/
   scripts.hello.exec = ''

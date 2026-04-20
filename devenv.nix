@@ -21,6 +21,8 @@
       keras
       scikit-learn
       matplotlib
+      ipaddress
+      tabulate
     '';
   };
 

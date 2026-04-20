@@ -1,10 +1,11 @@
-import pandas as pd
-from pandas import Series
+import gc
+import os
 import sys
 import zipfile
 from pathlib import Path
-import os
-import gc
+
+import pandas as pd
+from pandas import Series
 
 
 def get_columns(file: Path) -> [str]:
@@ -18,8 +19,5 @@ if __name__ == "__main__":
         sys.exit(1)
 
     path = Path(sys.argv[1])
-    
+
     (path)
-    
-    
-    

@@ -5,6 +5,7 @@ filelock==3.28.0
 fonttools==4.62.1
 fsspec==2026.3.0
 h5py==3.16.0
+ipaddress==1.0.23
 Jinja2==3.1.6
 joblib==1.5.3
 keras==3.14.0
@@ -31,6 +32,7 @@ scipy==1.17.1
 setuptools==81.0.0
 six==1.17.0
 sympy==1.14.0
+tabulate==0.10.0
 threadpoolctl==3.6.0
 torch==2.11.0
 torchvision==0.26.0

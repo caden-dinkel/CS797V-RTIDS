@@ -1,8 +1,8 @@
-import pandas as pd
 import sys
 import zipfile
 from pathlib import Path
 
+import pandas as pd
 
 # Data structure:
 # CICIDS2017 DATASET INCLUDES: 'GeneratedLabelledFlows.zip', 'MachineLearningCSV.zip'
@@ -36,7 +36,6 @@ ZIP_TO_DATASET = {
 ROOT = Path(__file__).resolve().parents[2]
 RAW_DIR = ROOT / "raw"
 DATA_DIR = ROOT / "data"
-
 
 
 def csv_to_parquet(csv_path: Path):

@@ -34,8 +34,8 @@ ZIP_TO_DATASET = {
 }
 
 ROOT = Path(__file__).resolve().parents[2]
-RAW_DIR = ROOT / "raw"
-DATA_DIR = ROOT / "data"
+RAW_DIR = ROOT / "data" / "raw"
+DATA_DIR = ROOT / "data" / "unprocessed"
 
 
 def csv_to_parquet(csv_path: Path):
@@ -73,15 +73,6 @@ def extract_zip(zip_path: Path, dataset: str):
         zf.extractall(dest)
 
 
-def process_dataset(dataset: str):
-    dataset_dir = DATA_DIR / dataset
-    csv_files = list(dataset_dir.rglob("*.csv"))
-    print(f"Converting {len(csv_files)} CSV(s) in {dataset}/")
-    for csv_path in csv_files:
-        csv_to_parquet(csv_path)
-        csv_path.unlink()
-
-
 if __name__ == "__main__":
     zip_files = [RAW_DIR / name for name in ZIP_TO_DATASET if (RAW_DIR / name).exists()]
 
@@ -95,12 +86,5 @@ if __name__ == "__main__":
         dataset = ZIP_TO_DATASET[zip_path.name]
         extract_zip(zip_path, dataset)
         datasets_processed.add(dataset)
-
-    for dataset in datasets_processed:
-        process_dataset(dataset)
-
-    for zip_path in zip_files:
-        zip_path.unlink()
-        print(f"Removed {zip_path.name}")
 
     print("Done.")

@@ -4,6 +4,7 @@ from collections import defaultdict
 from pathlib import Path
 
 import pandas as pd
+from numpy.random import seed
 
 # This file contains a script to analyze some set of csvs, and create an aggregate schema table of the csvs.
 #

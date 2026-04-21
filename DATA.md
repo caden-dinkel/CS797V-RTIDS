@@ -1,9 +1,5 @@
 # Data Preprocessing and Embedding
 
-
-This isn't great from an engineering standpoint, so I may try some additional processing.
-
-
 1. Transform non-numerical data to numberical (Checkout research article for options)
     a. Based on the procedure stated in the paper:
 
@@ -17,6 +13,4 @@ This isn't great from an engineering standpoint, so I may try some additional pr
 
     -- Min-Max Normalization Technique
 
-
 3. Split into Training (70%), Testing (15%), Validation (15%)
-

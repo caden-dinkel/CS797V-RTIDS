@@ -28,7 +28,6 @@ import pandas as pd
 
 ZIP_TO_DATASET = {
     "GeneratedLabelledFlows.zip": "CICIDS2017",
-    "MachineLearningCSV.zip": "CICIDS2017",
     "CSV-01-12.zip": "CIC-DDoS2019",
     "CSV-03-11.zip": "CIC-DDoS2019",
 }

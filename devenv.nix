@@ -20,9 +20,13 @@
       pandas
       keras
       scikit-learn
+      imbalanced-learn
+      seaborn
       matplotlib
       ipaddress
+      pyarrow
       tabulate
+      dvc
     '';
   };
 

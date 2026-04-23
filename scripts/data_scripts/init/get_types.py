@@ -31,10 +31,10 @@ def create_aggregate(datatypes):
 
 def analyze_types_dir(dir_path: Path):
     datatypes = []
-    for file in dir_path.rglob("*.csv"):
+    for file in dir_path.rglob("*.parquet"):
         if file.is_file():
             print(f"Loading file: {file}")
-            df = pd.read_csv(file, nrows=1000)  # small sample
+            df = pd.read_parquet(file)  # small sample
             datatypes.append(analyze_types(df))
             del df
             gc.collect()

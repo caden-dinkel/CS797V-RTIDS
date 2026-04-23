@@ -39,6 +39,10 @@ def min_max_norm(df: pd.DataFrame):
     return df_scaled
 
 
+def smote(df: pd.DataFrame):
+    pass
+
+
 def ip_to_int(ip):
     try:
         return int(ipaddress.ip_address(ip))

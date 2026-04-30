@@ -11,7 +11,7 @@ from numpy.random import seed
 
 
 def analyze_types(df):
-    sample = df.sample(min(1000, len(df)))
+    sample = df
 
     type_sets = {}
     for col in sample.columns:

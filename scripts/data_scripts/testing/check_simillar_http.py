@@ -12,14 +12,14 @@ def print_simillar_http_values(dir_path):
         if file.is_file():
             print(f"Loading file: {file}")
 
-            df = pd.read_csv(file, usecols=["SimillarHTTP"], low_memory=False)
+            df = pd.read_csv(file, usecols=["Source IP"], low_memory=False)
 
             value_set.update(df["SimillarHTTP"].dropna().unique())
 
             del df
             gc.collect()
 
-    pd.Series(list(value_set)).to_csv("SimillarHTTP_ValueSet.csv", index=False)
+    pd.Series(list(value_set)).to_csv("SourceIP_ValueSet.csv", index=False)
 
 
 def bad_files(path):

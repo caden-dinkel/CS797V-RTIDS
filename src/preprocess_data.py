@@ -28,9 +28,10 @@ def find_const_columns(df):
 # Label encode ips
 
 
-def convert_ips(df):
+def convert_strings(df):
     df["source_ip"] = df["source_ip"].astype("category").cat.codes
     df["destination_ip"] = df["destination_ip"].astype("category").cat.codes
+
     return df
 
 
@@ -67,7 +68,7 @@ def preprocess(df):
     df = df.drop(columns=drop_cols, errors="ignore")
 
     # 3: Encode IPs
-    df = convert_ips(df)
+    df = convert_strings(df)
 
     # 4: Normalize Dataset
     preprocessed_dataset = normalize(df)
